@@ -1,7 +1,7 @@
-test('Passing Test', () => {
+test('Truthy Test', () => {
   expect(true).toBeTruthy()
 })
 
-test('Failing Test', () => {
-  expect(false).toBeTruthy()
+test('Falsy Test', () => {
+  expect(false).toBeFalsy()
 })
