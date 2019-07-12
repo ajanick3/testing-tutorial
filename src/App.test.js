@@ -1,7 +1,6 @@
-test('Truthy Test', () => {
-  expect(true).toBeTruthy()
-})
+import { add } from './App'
 
-test('Falsy Test', () => {
-  expect(false).toBeFalsy()
+test('add', () => {
+  const value = add(1, 2)
+  expect(value).toBe(3)
 })
