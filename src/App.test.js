@@ -1,12 +1,20 @@
-import { add, totalCost } from './App'
+import { total } from './App'
+import { add } from './add'
 
-// Unit Test
-test('add', () => {
-  expect(add(1, 2)).toBe(3)
-})
+// Mock location of dependency
+jest.mock('./add', () => ({
+  // Fake function that returns 25
+  add: jest.fn(() => 25),
+}))
 
 // Integration Test
 // Tests that work together
 test('total cost', () => {
-  expect(totalCost(5, 19.99)).toBe('$24.99')
+  expect(total(5, 20)).toBe('$25')
+  expect(add).toHaveBeenCalledTimes(1)
+
+  // Redundant
+  add.mockImplementation(() => 30)
+  expect(total(5, 25)).toBe('$30')
+  expect(add).toHaveBeenCalledTimes(2)
 })

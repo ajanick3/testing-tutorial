@@ -1,5 +1,4 @@
-// Returns the sum of two numbers together
-export const add = (x, y) => x + y
+import { add } from './add'
 
 // Returns a string of the sum of subTotal and shipping prepended with $
-export const totalCost = (subTotal, shipping) => `$${add(subTotal, shipping)}`
+export const total = (subTotal, shipping) => `$${add(subTotal, shipping)}`
