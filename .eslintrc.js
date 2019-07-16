@@ -1,7 +1,6 @@
 module.exports = {
   extends: ['plugin:prettier/recommended'],
-  plugins: ['react', 'react-hooks', 'prettier'],
-  parser: 'babel-eslint',
+  plugins: ['prettier'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -14,8 +13,6 @@ module.exports = {
     es6: true,
   },
   rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
     'prettier/prettier': 'warn',
   },
 }
